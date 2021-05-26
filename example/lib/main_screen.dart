@@ -22,12 +22,12 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     final message =
         // ignore: lines_longer_than_80_chars
-        'Hey this is a QR code. Change this value in the main_screen.dart file.';
+        'Hey this is a QR code. Change this value in the main_screen.dart file.哈弗里的说法哈市独立开发哈克斯的返回拉横幅';
 
     final qrFutureBuilder = FutureBuilder<ui.Image>(
       future: _loadOverlayImage(),
       builder: (ctx, snapshot) {
-        final size = 280.0;
+        final size = 80.0;
         if (!snapshot.hasData) {
           return Container(width: size, height: size);
         }
@@ -65,8 +65,12 @@ class _MainScreenState extends State<MainScreen> {
               Expanded(
                 child: Center(
                   child: Container(
-                    width: 280,
-                    child: qrFutureBuilder,
+                    color: Colors.green,
+                    child: QrImage(
+                      data: 'This QR code will show the error state insteadhgfskhgkdshgkahsdlfhsakldhfksadhfkshd',
+                      padding: EdgeInsets.all(4),
+                      size: 70,
+                    ),
                   ),
                 ),
               ),
